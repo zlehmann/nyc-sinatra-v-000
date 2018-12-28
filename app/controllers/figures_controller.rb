@@ -31,11 +31,11 @@ class FiguresController < ApplicationController
       @figure.landmarks << new_landmark
     end
     @figure.save
-    #binding.pry
     redirect to "/figures/#{@figure.id}"
   end
 
   get '/figures/:id' do
+    binding.pry
     @figure = Figure.find(params[:id])
     erb :'/figures/show'
   end
